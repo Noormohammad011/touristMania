@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form'
 import useAuth from '../hooks/useAuth'
 import axios from 'axios'
 import swal from 'sweetalert'
+import Meta from '../components/Meta'
 const BookNow = () => {
   const { user } = useAuth()
   const { id } = useParams()
@@ -18,11 +19,7 @@ const BookNow = () => {
       .then((d) => setData(d))
   }, [id])
 
-  const {
-    register,
-    handleSubmit,
-   reset,
-  } = useForm()
+  const { register, handleSubmit, reset } = useForm()
   //handle submit form
 
   const onSubmit = async (data) => {
@@ -35,14 +32,14 @@ const BookNow = () => {
         date: data.date,
         postalcode: data.postalcode,
         price: data.price,
+        pending: true,
       })
       .then((res) => {
         if (res.data.insertedId) {
-            swal('Good job!', 'Your Order is Placed', 'success')
-            reset()
+          swal('Good job!', 'Your Order is Placed', 'success')
+          reset()
         }
       })
-  
   }
   return (
     <Container>
@@ -50,6 +47,7 @@ const BookNow = () => {
         Go Back
       </Link>
       <>
+        <Meta title={data.title} />
         <Row>
           <Col md={4} className='my-4'>
             <Image src={data.image} alt={data.name} fluid />

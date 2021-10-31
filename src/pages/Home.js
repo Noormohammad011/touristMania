@@ -4,6 +4,9 @@ import axios from 'axios'
 import OurServices from '../components/OurServices'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
+import Meta from '../components/Meta'
+import AboutUs from './AboutUs'
+import Gallery from './Gallery'
 const Home = () => {
   const [data, setData] = useState([])
     
@@ -33,28 +36,31 @@ const Home = () => {
   }, [])
   return (
     <>
+      <Meta />
       <Carousel className='d-none d-md-block'>
-        {data.map((x) => (
-          <Carousel.Item key={x._id} interval={750}>
-            <img
-              className='d-block'
-              src={x.image}
-              style={{ height: 600, width: '100%' }}
-              alt={x.image}
-            />
-            <Carousel.Caption>
-              <h3
-                style={{ color: '#254358', fontFamily: 'Roboto' }}
-                className='text-uppercase fs-2 fw-bold'
-              >
-                {x.title}
-              </h3>
-              <p style={{ color: 'black' }} className='text-uppercase fs-4'>
-                {x.description}
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        )).slice(0, 4)}
+        {data
+          .map((x) => (
+            <Carousel.Item key={x._id} interval={750}>
+              <img
+                className='d-block'
+                src={x.image}
+                style={{ height: 600, width: '100%' }}
+                alt={x.image}
+              />
+              <Carousel.Caption>
+                <h3
+                  style={{ color: '#254358', fontFamily: 'Roboto' }}
+                  className='text-uppercase fs-2 fw-bold'
+                >
+                  {x.title}
+                </h3>
+                <p style={{ color: 'black' }} className='text-uppercase fs-4'>
+                  {x.description}
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))
+          .slice(0, 4)}
       </Carousel>
       <Container className='mt-5'>
         <Row className='mb-3'>
@@ -72,6 +78,9 @@ const Home = () => {
           )}
         </Row>
       </Container>
+
+      <AboutUs />
+      <Gallery />
     </>
   )
 }

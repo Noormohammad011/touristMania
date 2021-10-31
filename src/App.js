@@ -13,6 +13,10 @@ import BookNow from './pages/BookNow'
 import PrivateRoute from './PrivateRoute/PrivateRoute'
 import MyOrder from './pages/MyOrder'
 import ManageAllOrders from './pages/ManageAllOrders'
+import ContactUsPage from './pages/ContactUsPage'
+import Faq from './pages/Faq'
+import AboutUs from './pages/AboutUs'
+import Gallery from './pages/Gallery'
 
 function App() {
   return (
@@ -30,6 +34,9 @@ function App() {
             />
             <Route path='/myOrder' component={MyOrder} exact />
             <Route path='/allOrder' component={ManageAllOrders} exact />
+            <Route path='/faq' component={Faq} exact />
+            <Route path='/about' component={AboutUs} exact />
+            <Route path='/gallery' component={Gallery} exact />
             <Route
               path='/getAllTouristPlace/:id/edit'
               component={EditTouristPlace}
@@ -37,6 +44,9 @@ function App() {
             />
             <PrivateRoute exact path='/getAllTouristPlace/:id'>
               <BookNow></BookNow>
+            </PrivateRoute>
+            <PrivateRoute exact path='/contactUs'>
+              <ContactUsPage></ContactUsPage>
             </PrivateRoute>
 
             <Route path='/login' component={Login} exact />

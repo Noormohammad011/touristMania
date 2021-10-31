@@ -33,7 +33,7 @@ const MyOrder = () => {
       }
 
       fetchData()
-    }, [])
+    }, [user?.email])
 
     const deleteHandler = (id) => {
       const url = `http://localhost:5000/myOrder/${id}`
@@ -67,6 +67,7 @@ const MyOrder = () => {
             <tr>
               <th>ID</th>
               <th>EMAIL</th>
+              <th>Order Status</th>
               <th></th>
             </tr>
           </thead>
@@ -75,6 +76,7 @@ const MyOrder = () => {
               <tr key={x._id}>
                 <td>{x._id}</td>
                 <td>{x.email}</td>
+                <td>{x.pending ? <h4>Pending</h4> : <h4>Order Placed</h4>}</td>
                 <td>
                   <Button
                     variant='danger'

@@ -64,6 +64,7 @@ const GetAllTouristPlace = () => {
               <th>TITLE</th>
               <th>IMAGE</th>
               <th>DESCRIPTION</th>
+              <th>PRICE</th>
               <th></th>
             </tr>
           </thead>
@@ -80,6 +81,7 @@ const GetAllTouristPlace = () => {
                   />
                 </td>
                 <td>{x.description}</td>
+                <td>{x.price}</td>
                 <td>
                   <LinkContainer to={`/getAllTouristPlace/${x._id}/edit`}>
                     <Button variant='light' className='btn-sm'>
