@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import Layout from './Layout/Layout'
+import './App.css'
+import AddTouristPlace from './pages/AddTouristPlace'
+import Home from './pages/Home'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import AuthProvider from './context/AuthProvider'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import GetAllTouristPlace from './pages/GetAllTouristPlace'
+import EditTouristPlace from './pages/EditTouristPlace'
+// import PrivateRoute from './PrivateRoute/PrivateRoute'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <AuthProvider>
+        <Layout>
+          <Switch>
+            <Route path='/' component={Home} exact />
+            <Route path='/home' component={Home} exact />
+            <Route path='/addTouristPlace' component={AddTouristPlace} exact />
+            <Route
+              path='/getAllTouristPlace'
+              component={GetAllTouristPlace}
+              exact
+            />
+            <Route
+              path='/getAllTouristPlace/:id/edit'
+              component={EditTouristPlace}
+              exact
+            />
+            <Route path='/login' component={Login} exact />'
+            <Route path='/signup' component={SignUp} exact />'
+          </Switch>
+        </Layout>
+      </AuthProvider>
+    </Router>
+  )
 }
 
-export default App;
+export default App
