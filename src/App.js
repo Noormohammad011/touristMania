@@ -8,7 +8,11 @@ import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import GetAllTouristPlace from './pages/GetAllTouristPlace'
 import EditTouristPlace from './pages/EditTouristPlace'
-// import PrivateRoute from './PrivateRoute/PrivateRoute'
+import NotFoundPage from './pages/NotFoundPage'
+import BookNow from './pages/BookNow'
+import PrivateRoute from './PrivateRoute/PrivateRoute'
+import MyOrder from './pages/MyOrder'
+import ManageAllOrders from './pages/ManageAllOrders'
 
 function App() {
   return (
@@ -24,13 +28,20 @@ function App() {
               component={GetAllTouristPlace}
               exact
             />
+            <Route path='/myOrder' component={MyOrder} exact />
+            <Route path='/allOrder' component={ManageAllOrders} exact />
             <Route
               path='/getAllTouristPlace/:id/edit'
               component={EditTouristPlace}
               exact
             />
-            <Route path='/login' component={Login} exact />'
-            <Route path='/signup' component={SignUp} exact />'
+            <PrivateRoute exact path='/getAllTouristPlace/:id'>
+              <BookNow></BookNow>
+            </PrivateRoute>
+
+            <Route path='/login' component={Login} exact />
+            <Route path='/signup' component={SignUp} exact />
+            <Route path='*' component={NotFoundPage} exact />
           </Switch>
         </Layout>
       </AuthProvider>

@@ -16,10 +16,10 @@ const OurServices = ({ services }) => {
           <Card.Text> {services.description.slice(0, 30) + '...'}</Card.Text>
         </Card.Body>
         <Card.Footer>
-          <Link>
+          <Link to={`/getAllTouristPlace/${services._id}`}>
             <div className='d-grid gap-2'>
               <button className='btn btn-primary' type='button'>
-                Button
+                Book Now
               </button>
             </div>
           </Link>

@@ -30,6 +30,20 @@ const Header = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+            {user.email && (
+              <>
+              <LinkContainer to='/myOrder'>
+                <Nav.Link>
+                  <i className='fas fa-cart-plus'> MyOrder</i>
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/allOrder'>
+                <Nav.Link>
+                   AllOrders
+                </Nav.Link>
+              </LinkContainer>
+              </>
+            )}
             {user.email ? (
               <NavDropdown title={user?.email} id='nav-dropdown'>
                 <LinkContainer to='/addTouristPlace'>

@@ -94,33 +94,6 @@ const GetAllTouristPlace = () => {
                     <i className='fas fa-trash'></i>
                   </Button>
                 </td>
-                {/* <td>
-                    <a href={`mailto:${x.email}`}>{x.email}</a>
-                  </td>
-                  <td>
-                    {x.isAdmin ? (
-                      <i
-                        className='fas fa-check'
-                        style={{ color: 'green' }}
-                      ></i>
-                    ) : (
-                      <i className='fas fa-times' style={{ color: 'red' }}></i>
-                    )}
-                  </td>
-                  <td>
-                    <LinkContainer to={`/admin/user/${x._id}/edit`}>
-                      <Button variant='light' className='btn-sm'>
-                        <i className='fas fa-edit'></i>
-                      </Button>
-                    </LinkContainer>
-                    <Button
-                      variant='danger'
-                      className='btn-sm'
-                      onClick={() => deleteHandler(x._id)}
-                    >
-                      <i className='fas fa-trash'></i>
-                    </Button>
-                  </td> */}
               </tr>
             ))}
           </tbody>

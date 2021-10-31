@@ -52,6 +52,14 @@ const AddTouristPlace = () => {
             placeholder='Image Link'
           ></Form.Control>
         </Form.Group>
+        <Form.Group controlId='text' className='my-2'>
+          <Form.Label>Price</Form.Label>
+          <Form.Control
+            type='text'
+            {...register('price', { required: true })}
+            placeholder='Price'
+          ></Form.Control>
+        </Form.Group>
 
         <Button type='submit' variant='primary' className='my-2'>
           Add Place

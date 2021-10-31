@@ -13,7 +13,7 @@ const EditTouristPlace = ({ match, history }) => {
       .then((res) => res.json())
       .then((d) => setData(d))
   }, [match.params.id])
-  console.log(data)
+  
 
   // Update TravelLocation
   const handleTitleChange = (e) => {
@@ -22,6 +22,7 @@ const EditTouristPlace = ({ match, history }) => {
       title: updatedTitle,
       description: data.description,
       image: data.image,
+      price: data.price,
     }
     setData(updatedLocation)
   }
@@ -32,6 +33,7 @@ const EditTouristPlace = ({ match, history }) => {
       title: data.title,
       description: updatedDescription,
       image: data.image,
+      price: data.price,
     }
     setData(updatedLocation)
   }
@@ -41,6 +43,17 @@ const EditTouristPlace = ({ match, history }) => {
       title: data.title,
       description: data.description,
       image: updatedImage,
+      price: data.price
+    }
+    setData(updatedLocation)
+  }
+  const handlePriceChange = (e) => {
+    const updatedPrice = e.target.value
+    const updatedLocation = {
+      title: data.title,
+      description: data.description,
+      image:data.image,
+      price: updatedPrice,
     }
     setData(updatedLocation)
   }
@@ -97,6 +110,15 @@ const EditTouristPlace = ({ match, history }) => {
             onChange={handleImageChange}
             value={data?.image || ''}
             placeholder='Image Link'
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group controlId='text' className='my-2'>
+          <Form.Label>Place Image</Form.Label>
+          <Form.Control
+            type='text'
+            onChange={handlePriceChange}
+            value={data?.price || ''}
+            placeholder='Price'
           ></Form.Control>
         </Form.Group>
 
