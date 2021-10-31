@@ -21,7 +21,7 @@ const MyOrder = () => {
 
         try {
           const result = await axios.get(
-            `http://localhost:5000/myOrder/${user?.email}`
+            `https://bloodcurdling-flesh-40992.herokuapp.com/myOrder/${user?.email}`
           )
 
           setData(result.data)
@@ -36,7 +36,7 @@ const MyOrder = () => {
     }, [user?.email])
 
     const deleteHandler = (id) => {
-      const url = `http://localhost:5000/myOrder/${id}`
+      const url = `https://bloodcurdling-flesh-40992.herokuapp.com/myOrder/${id}`
       fetch(url, {
         method: 'DELETE',
       })

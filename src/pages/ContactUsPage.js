@@ -11,7 +11,7 @@ const ContactUsPage = () => {
 
   const onSubmit = async (data) => {
     await axios
-      .post(`http://localhost:5000/contactUs`, {
+      .post(`https://bloodcurdling-flesh-40992.herokuapp.com/contactUs`, {
         email: user?.email,
         address: data.address,
         mobile: data.mobile,

@@ -19,7 +19,7 @@ const GetAllTouristPlace = () => {
       setIsLoading(true)
 
       try {
-        const result = await axios.get('http://localhost:5000/allTouristPlace/')
+        const result = await axios.get('https://bloodcurdling-flesh-40992.herokuapp.com/allTouristPlace/')
 
         setData(result.data)
       } catch (error) {
@@ -33,7 +33,7 @@ const GetAllTouristPlace = () => {
   }, [])
 
   const deleteHandler = (id) => {
-      const url = `http://localhost:5000/deleteTouristInfo/${id}`
+      const url = `https://bloodcurdling-flesh-40992.herokuapp.com/deleteTouristInfo/${id}`
       fetch(url, {
           method: 'DELETE'
       }).then(res => res.json()).then(d => {

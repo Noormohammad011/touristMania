@@ -13,7 +13,7 @@ const BookNow = () => {
   const [data, setData] = useState({})
 
   useEffect(() => {
-    const url = `http://localhost:5000/allTouristPlace/${id}`
+    const url = `https://bloodcurdling-flesh-40992.herokuapp.com/allTouristPlace/${id}`
     fetch(url)
       .then((res) => res.json())
       .then((d) => setData(d))
@@ -24,7 +24,7 @@ const BookNow = () => {
 
   const onSubmit = async (data) => {
     await axios
-      .post(`http://localhost:5000/addTouristOrder`, {
+      .post(`https://bloodcurdling-flesh-40992.herokuapp.com/addTouristOrder`, {
         email: user?.email,
         address: data.address,
         city: data.city,

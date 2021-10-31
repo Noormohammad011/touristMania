@@ -17,7 +17,7 @@ const Gallery = () => {
       setIsLoading(true)
 
       try {
-        const result = await axios.get('http://localhost:5000/gallery')
+        const result = await axios.get('https://bloodcurdling-flesh-40992.herokuapp.com/gallery')
 
         setData(result.data)
       } catch (error) {

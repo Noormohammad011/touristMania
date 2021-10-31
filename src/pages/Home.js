@@ -21,7 +21,7 @@ const Home = () => {
 
       try {
         const result = await axios.get(
-          'http://localhost:5000/allTouristPlace/'
+          'https://bloodcurdling-flesh-40992.herokuapp.com/allTouristPlace/'
         )
 
         setData(result.data)

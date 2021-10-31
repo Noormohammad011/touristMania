@@ -17,7 +17,7 @@ const ManageAllOrders = () => {
       setIsLoading(true)
 
       try {
-        const result = await axios.get(`http://localhost:5000/allOrders`)
+        const result = await axios.get(`https://bloodcurdling-flesh-40992.herokuapp.com/allOrders`)
 
         setData(result.data)
       } catch (error) {
@@ -31,7 +31,7 @@ const ManageAllOrders = () => {
   }, [])
 
   const deleteHandler = (id) => {
-    const url = `http://localhost:5000/allOrders/${id}`
+    const url = `https://bloodcurdling-flesh-40992.herokuapp.com/allOrders/${id}`
     fetch(url, {
       method: 'DELETE',
     })
@@ -47,7 +47,7 @@ const ManageAllOrders = () => {
       })
   }
   const updateHandler = async (id) => {
-      await axios.put(`http://localhost:5000/allOrders/${id}`, { pending: false })
+      await axios.put(`https://bloodcurdling-flesh-40992.herokuapp.com/allOrders/${id}`, { pending: false })
      
   }
   return (

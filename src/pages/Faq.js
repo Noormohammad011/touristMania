@@ -16,7 +16,7 @@ const Faq = () => {
          setIsLoading(true)
 
          try {
-           const result = await axios.get('http://localhost:5000/faq')
+           const result = await axios.get('https://bloodcurdling-flesh-40992.herokuapp.com/faq')
 
            setData(result.data)
          } catch (error) {

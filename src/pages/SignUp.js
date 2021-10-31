@@ -45,7 +45,7 @@ export default function SignUp() {
         setIsLoading(false)
       })
     await axios
-      .post(`http://localhost:5000/addTourist`, {
+      .post(`https://bloodcurdling-flesh-40992.herokuapp.com/addTourist`, {
         name: userInput.name,
         email: userInput.email,
       })

@@ -8,7 +8,7 @@ import swal from 'sweetalert'
 const EditTouristPlace = ({ match, history }) => {
   const [data, setData] = useState({})
   useEffect(() => {
-    const url = `http://localhost:5000/allTouristPlace/${match.params.id}`
+    const url = `https://bloodcurdling-flesh-40992.herokuapp.com/allTouristPlace/${match.params.id}`
     fetch(url)
       .then((res) => res.json())
       .then((d) => setData(d))
@@ -60,7 +60,7 @@ const EditTouristPlace = ({ match, history }) => {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    const url = `http://localhost:5000/allTouristPlace/${match.params.id}`
+    const url = `https://bloodcurdling-flesh-40992.herokuapp.com/allTouristPlace/${match.params.id}`
     fetch(url, {
       method: 'PUT',
       headers: {

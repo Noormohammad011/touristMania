@@ -13,7 +13,7 @@ const AddTouristPlace = () => {
 
   const onSubmit = async (data) => {
     await axios
-      .post(`http://localhost:5000/addTouristPlace`, data)
+      .post(`https://bloodcurdling-flesh-40992.herokuapp.com/addTouristPlace`, data)
       .then((res) => {
         if (res.data.insertedId) {
             swal('Thank You', 'Adding New Place', 'success')
